@@ -2,8 +2,12 @@ from django import forms
 
 class user_form(forms.Form):
     #<label for="user_name">Full Name</label>
-    #<input type="text" name="user_name" value="muzahid" required>
-    user_name = forms.CharField(required=False, label = "Full Name", initial = "Muzahid")
+    #<input type="text" name="user_name" placeholder="Enter Your FUll Name" required>
+    user_name = forms.CharField( required=True, label="Full Name", widget = forms.TextInput( attrs = {'placeholder':'Enter Your Full Name', 'style':'width:300px'}) )
+
+
+    #<input type="date">
+    user_dob = forms.DateField( label ="Date of Birth", widget = forms.TextInput( attrs = {'type':'date'}))
 
 
     #<label for="user_email">User Email</label>
