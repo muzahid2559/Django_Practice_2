@@ -9,6 +9,8 @@ class Musician(models.Model):
     last_name = models.CharField(max_length=30)
     instrument = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.first_name + " " + self.last_name
 
 class Album(models.Model):
     # id = models.AutoField(primary_key=True) ...{hidden column auto make django}
